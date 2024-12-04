@@ -105,6 +105,12 @@ header a{
 
 /* Main Section */
 
+.carousel {
+  margin-top: 80px; } 
+  
+ body{
+  padding-top: 1px; 
+}
 .banner_container{
   padding-top: 82px;
   margin: 0px 70px;

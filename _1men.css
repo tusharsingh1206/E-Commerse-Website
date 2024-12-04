@@ -19,12 +19,6 @@ header{
   position: fixed;
   width: 100%;
 }
-/* .myntra_home{
-  height: 45px;
-}
-.logo_container{
-  margin-left: 4%;
-} */
 .home_container{
   margin-left: 4%;
 }  
@@ -103,7 +97,12 @@ header a{
   text-decoration: none;
 }
 /* Main Section */
-
+.carousel {
+  margin-top: 80px; } 
+  
+ body{
+  padding-top: 1px; 
+}
 .banner_container{
   padding-top: 82px;
   margin: 1px 70px;
@@ -323,5 +322,17 @@ header a{
 {
   margin-left: 40px;
 }
+
+
+/* .nav_bar{
+  margin-top: 0px;
+}
+.carousel {
+  margin-top: 80px; } 
+  
+ body{
+  padding-top: 80px; 
+} */
+
 
 
