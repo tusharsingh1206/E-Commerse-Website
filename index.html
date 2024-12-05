@@ -1,54 +1,219 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>TS Store</title>
-  </head>
-  <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-     
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Section | T&S Store</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Header Section
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff3f6c;
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #ff3f6c;
+    } */
+
+    /* Carousel Section */
+    .carousel {
+      margin-top: 70px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: block;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .carousel-controls button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .carousel-controls button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Featured Categories */
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+      padding: 0 20px;
+    }
+
+    .category {
+      flex: 1 1 calc(25% - 20px);
+      margin: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .category img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .category h3 {
+      padding: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .category:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px);
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .category {
+        flex: 1 1 calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<!-- <header>
+  <div class="logo">T&S Store</div>
+  <div class="nav-links">
+    <a href="#">Men</a>
+    <a href="#">Women</a>
+    <a href="#">Beauty</a>
+    <a href="#">Kids</a>
+  </div>
+</header> -->
+
+<!-- Carousel Section -->
+<div class="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/1500x500?text=Skincare+Essentials" alt="Skincare">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/1500x500?text=Makeup+Must-Haves" alt="Makeup">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/1500x500?text=Haircare+Products" alt="Haircare">
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button onclick="prevSlide()">❮</button>
+    <button onclick="nextSlide()">❯</button>
+  </div>
+</div>
+
+<!-- Featured Categories Section -->
+<section class="categories">
+  <div class="category">
+    <img src="https://via.placeholder.com/400x300?text=Skincare" alt="Skincare">
+    <h3>Skincare</h3>
+  </div>
+  <div class="category">
+    <img src="https://via.placeholder.com/400x300?text=Makeup" alt="Makeup">
+    <h3>Makeup</h3>
+  </div>
+  <div class="category">
+    <img src="https://via.placeholder.com/400x300?text=Haircare" alt="Haircare">
+    <h3>Haircare</h3>
+  </div>
+  <div class="category">
+    <img src="https://via.placeholder.com/400x300?text=Fragrances" alt="Fragrances">
+    <h3>Fragrances</h3>
+  </div>
+</section>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.carousel-item');
+
+  function showSlide(index) {
+    const offset = -index * 100;
+    document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+</script>
+
+</body>
 </html>
